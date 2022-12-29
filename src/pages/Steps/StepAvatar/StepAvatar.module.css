@@ -1,0 +1,17 @@
+.cardWrapper{
+    composes: cardWrapper from '../../Home/Home.module.css';
+}
+
+.iconUpload{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 3rem;
+    border: white 1px solid;
+    margin: 0 auto;
+    border: 5px solid #387cb8;
+    cursor: pointer;
+    overflow: hidden;
+}
+.iconUpload input{
+    visibility: hidden;
+}

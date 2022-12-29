@@ -1,0 +1,24 @@
+.cardWrapper{
+    max-width: 30rem; 
+}
+.buttonWrapper{
+  justify-content: flex-end;
+  display: flex;
+}
+
+.button{
+    height: 70px;
+    width: 70px;
+    background: #262626;
+    outline: 0;
+    border: 0;
+    margin: 10px;
+    margin-left: 4px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.active{
+    background: #0077FF;
+}
