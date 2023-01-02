@@ -7,8 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setNam } from '../../../redux/activationSlice'
 import { useState } from 'react'
 function StepName({ onNext }) {
-  const { name } = useSelector((state) => state.activation);
-  let [fname, setFName] = useState(name);
+  let [fname, setFName] = useState("");
   let dispatch = useDispatch();
   let submit = () => {
     dispatch(setNam(fname));

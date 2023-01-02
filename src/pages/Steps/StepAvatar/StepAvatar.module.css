@@ -1,5 +1,6 @@
 .cardWrapper{
     composes: cardWrapper from '../../Home/Home.module.css';
+    width:100%;
 }
 
 .iconUpload{

@@ -3,8 +3,9 @@ import Card from '../../../components/shared/Card/Card'
 import Button from '../../../components/shared/Button/Button'
 import styles from "./StepAvatar.module.css"
 import { useSelector, useDispatch } from 'react-redux'
-import { setAvatar } from '../../../redux/activationSlice'
+import { setAvatar,setNam } from '../../../redux/activationSlice'
 import { activate } from '../../../http'
+import { setAuth } from '../../../redux/authSlice'
 function StepAvatar({ onNext }) {
   let { name, avatar } = useSelector((state) => state.activation);
   const [profilePicture, setProfilePicture] = useState("/images/avatar.png")
@@ -12,7 +13,9 @@ function StepAvatar({ onNext }) {
   let submit = async () => {
     try {
       const { data } = await activate({ name, avatar });
-      console.log(data);
+      dispatch(setNam(data.user.name));
+      dispatch(setAvatar(data.user.avatar))
+      dispatch(setAuth(data));
     }
     catch (e) {
       console.log(e);
@@ -29,7 +32,7 @@ function StepAvatar({ onNext }) {
     }
   }
   return (
-    <div style={{ "display": "flex", "alignItems": "center", "justifyContent": "center",width:"100%" }}>
+    <div style={{ "display": "flex", "alignItems": "center", "justifyContent": "center" }}>
         <div className={styles.cardWrapper}>
         <div style={{ "padding": "1rem" }}>
           <Card title={`Okay, ${name}`} icon="monkey">
