@@ -1,3 +1,52 @@
 .navbar{
-    padding: 20px 0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.profile{
+    height: 2rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+}
+.logoutBtn{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    margin: 0;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.3rem;
+    background-color: rgb(6, 95, 238);
+    border-radius: 2rem;
+    transition: 0.3s ease-in-out;
+}
+.profile{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    margin: 0;
+}
+.profileImg{
+    height: 3rem;
+    border-radius: 2rem;
+    border:4px solid rgb(6, 95, 238)
+}
+.profileName{
+    margin-right: 1rem;
+    font-size: larger;
+}
+.logoutBtn:hover{
+    background-color: rgb(4, 77, 195);
+}
+.logoutImg{
+    height: 1rem;
 }

@@ -1,0 +1,27 @@
+.spinner{
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+@keyframes spin{
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.loaderCard
+{
+    background: #1D1D1D;
+    padding: 30px;
+    border-radius: 20px;
+    width: 30rem;
+    margin: 1rem;
+}
+.loaderCenter{
+    margin-top: 12rem;
+    display: flex;
+    justify-content: center;
+}
+.loaderInside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

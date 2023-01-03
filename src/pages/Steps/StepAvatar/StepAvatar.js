@@ -6,11 +6,14 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setAvatar,setNam } from '../../../redux/activationSlice'
 import { activate } from '../../../http'
 import { setAuth } from '../../../redux/authSlice'
+import Loader from '../../../components/shared/Loader/Loader'
 function StepAvatar({ onNext }) {
   let { name, avatar } = useSelector((state) => state.activation);
   const [profilePicture, setProfilePicture] = useState("/images/avatar.png")
+  const [loading,setLoading]=useState(false);
   const dispatch = useDispatch();
   let submit = async () => {
+    setLoading(true);
     try {
       const { data } = await activate({ name, avatar });
       dispatch(setNam(data.user.name));
@@ -19,6 +22,10 @@ function StepAvatar({ onNext }) {
     }
     catch (e) {
       console.log(e);
+    }
+    finally{
+      const timer = setTimeout(() => setLoading(false), 2000);
+      clearTimeout(timer);
     }
   }
   let handleImage = (e) => {
@@ -31,6 +38,7 @@ function StepAvatar({ onNext }) {
       }
     }
   }
+  if(loading) return(<Loader text={"Activation in Progress"}/>)
   return (
     <div style={{ "display": "flex", "alignItems": "center", "justifyContent": "center" }}>
         <div className={styles.cardWrapper}>

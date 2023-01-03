@@ -1,0 +1,59 @@
+.roomsContainer{
+    border-top:1px solid rgb(80, 80, 80);
+}
+.roomsBox{
+    max-width: 80rem;
+    margin: auto;
+}
+.roomsBarContainer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.searchBarContainer{
+    display: flex;
+    align-items: center;
+    margin-right:1rem;
+}
+.searchIcons{
+    position: relative;
+    left: 1.5rem;
+}
+.searchBar{
+    background: #262626;
+    border: 0;
+    outline: 0;
+    width: 14rem;
+    border-radius: 1rem;
+    height: 2rem;
+    padding-left: 2rem;
+    color: white;
+}
+.newRoomButton{
+    background-color: #20BD5F;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    outline: none;
+}
+.buttonText{
+    margin-top:1px;
+    margin-left:2px;
+    color:white;
+    font-size:"medium";
+    font-weight:bold;
+}
+
+@media screen and (max-width: 556px) {
+    .newRoomButton{
+
+    }
+    .buttonText{
+        display: none;
+        outline: none;
+    }
+  }
