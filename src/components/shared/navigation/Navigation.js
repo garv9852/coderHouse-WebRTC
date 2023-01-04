@@ -11,12 +11,12 @@ function Navigation() {
     color: '#fff',
     textDecoration: 'none',
     fontWeight: "bold",
-    fontSize: '22px',
+    fontSize: '17px',
     display: "flex",
     alignItems: 'center'
   }
   const logoText = {
-    marginLeft: "10px"
+    marginLeft: "0.3rem"
   }
   const logoutUser = async () => {
     try {
@@ -31,19 +31,17 @@ function Navigation() {
   return (
     <nav className={`${styles.navbar} container`}>
       <Link style={brandstyle} to="/">
-        <img src='./images/hand.png' alt="logo-img" />
+        <img src='./images/hand.png' style={{ height: "1.5rem" }} alt="logo-img" />
         <span style={logoText}>CodersHouse</span>
       </Link>
       {
         isAuth && (
-          <div style={{display:"flex",alignItems:"center"}}>
+          <div style={{ display: "flex", alignItems: "center" }}>
             <div className={styles.profileName}>
-              {user.name}
+              {user.name.charAt(0).toUpperCase() + user.name.slice(1)}
             </div>
-            <div style={{marginRight:"1rem",marginTop:"0.5rem"}}>
-              <button className={styles.profile}>
-                <img className={styles.profileImg} src={user.avatar} alt='avatar-img'/>
-              </button>
+            <div style={{ marginRight: "1rem", marginTop: "0.5rem" }}>
+                <img className={styles.profileImg} src={user.avatar} alt='avatar-img' />
             </div>
             <div>
               <button className={styles.logoutBtn} onClick={logoutUser}>
