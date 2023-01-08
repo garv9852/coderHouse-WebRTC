@@ -14,6 +14,11 @@
     align-items: center;
     padding: 0.4rem;
     border-radius: 1rem;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.btn:hover{
+    background-color: #07692f;
 }
 
 .searchBar {
@@ -32,11 +37,17 @@
 }
 .gridRooms{
     display:grid;
-    grid-template-columns:auto auto auto auto auto;
-    justify-items: center;
+    grid-template-columns:repeat(auto-fit,249px);
+    grid-row-gap:15px;
+    grid-column-gap:8px;
 }
 .textRoom{
     border-bottom: solid 1px #0077FF;
+}
+@media screen and (max-width: 500px) {
+    .gridRooms{
+        justify-content: center;
+    }
 }
 @media screen and (max-width: 359px) {
     .buttonText{
@@ -52,26 +63,5 @@
 @media screen and (max-width: 556px) {
     .textRoom {
         display: none;
-    }
-}
-
-@media screen and (max-width: 1150px) {
-    .gridRooms{
-        grid-template-columns: auto auto auto auto;
-    }
-}
-@media screen and (max-width: 918px) {
-    .gridRooms{
-        grid-template-columns: auto auto auto;
-    }
-}
-@media screen and (max-width: 705px) {
-    .gridRooms{
-        grid-template-columns: auto auto;
-    }
-}
-@media screen and (max-width: 474px) {
-    .gridRooms{
-        grid-template-columns: auto;
     }
 }

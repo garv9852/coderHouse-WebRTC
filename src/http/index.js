@@ -11,7 +11,9 @@ export const sendOtp = (data) => api.post('/api/send-otp', data)
 export const verifyOtp = (data) => api.post('/api/verify-otp', data)
 export const activate = (data) => api.post('/api/activate', data);
 export const refresh = () => api.get('/api/refresh');
-export const logout=()=>api.post('/api/logout');
+export const creatRoom = (data) => api.post('/api/rooms', data);
+export const getAllRooms = () => api.get("/api/rooms")
+export const logout = () => api.post('/api/logout');
 api.interceptors.response.use(
     (config) => {
         return config
@@ -28,7 +30,7 @@ api.interceptors.response.use(
                 )
                 return api.request(originalRequest);
             }
-            catch(err){
+            catch (err) {
                 console.log(err.message);
             }
         }

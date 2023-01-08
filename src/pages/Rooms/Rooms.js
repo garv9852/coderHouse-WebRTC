@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./Rooms.module.css"
 import RoomCard from "../../components/shared/RoomCard/RoomCard"
+import AddRoomModel from '../../components/AddRoomModel/AddRoomModel'
+import { getAllRooms } from '../../http'
 function Rooms() {
+  const [showModel,setShowModel]=useState(false);
+  const [rooms,setRooms]=useState([]);
+  useEffect(()=>{
+    const fetchRooms=async()=>{
+      const {data}=await getAllRooms();
+      setRooms(data);
+    }
+    fetchRooms();
+  },[])
+  const onSetModel=()=>{
+    setShowModel(!showModel);
+  }
   return (
     <div className={styles.roomsContainer}>
       <div className={styles.roomsBox}>
@@ -16,7 +30,7 @@ function Rooms() {
             </div>
           </div>
           <div style={{ marginRight: "0.5rem" }}>
-            <div className={styles.btn}>
+            <div className={styles.btn} onClick={onSetModel}>
               <img src="https://img.icons8.com/material-outlined/24/ffffff/plus-math--v1.png" alt={"roomCreate-logo"} />
               <div className={styles.buttonText}>Start a room</div>
             </div>
@@ -25,13 +39,14 @@ function Rooms() {
         <div style={{ marginTop: "2rem"}}>
           <div className={styles.gridRooms}>
             {
-              [...new Array(10)].map(()=>(
-                <RoomCard/>
+              rooms.map((roomData)=>(
+                <RoomCard key={roomData.id} data={roomData}/>
               ))
             }
           </div>
         </div>
       </div>
+      {showModel && <AddRoomModel onClose={onSetModel}/>}
     </div>
   )
 }

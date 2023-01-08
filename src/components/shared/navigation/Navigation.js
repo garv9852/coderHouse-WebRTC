@@ -31,7 +31,7 @@ function Navigation() {
   return (
     <nav className={`${styles.navbar} container`}>
       <Link style={brandstyle} to="/">
-        <img src='./images/hand.png' style={{ height: "1.5rem" }} alt="logo-img" />
+        <img src='/images/hand.png' style={{ height: "1.5rem" }} alt="logo-img" />
         <span style={logoText}>CodersHouse</span>
       </Link>
       {
